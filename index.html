@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayo Family | Home & Adventures</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#fbe8e3',
+                            500: '#dd6b20',
+                            600: '#c05621',
+                            700: '#9c4221',
+                            800: '#7b341e',
+                            900: '#652b19',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2">
+                <i class="fa-solid fa-house-chimney text-brand-600"></i> sayofamily<span class="text-brand-600">.com</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-stone-600 font-medium">
+                <a href="#about" class="hover:text-brand-600 transition">About Us</a>
+                <a href="#crew" class="hover:text-brand-600 transition">Meet the Crew</a>
+                <a href="#projects" class="hover:text-brand-600 transition">Projects & Homestead</a>
+                <a href="#updates" class="hover:text-brand-600 transition">Latest Journal</a>
+                <a href="#contact" class="px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition shadow-sm">Say Hello</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-stone-700 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-4 space-y-3">
+            <a href="#about" class="block text-stone-600 hover:text-brand-600">About Us</a>
+            <a href="#crew" class="block text-stone-600 hover:text-brand-600">Meet the Crew</a>
+            <a href="#projects" class="block text-stone-600 hover:text-brand-600">Projects & Homestead</a>
+            <a href="#updates" class="block text-stone-600 hover:text-brand-600">Latest Journal</a>
+            <a href="#contact" class="block text-stone-600 hover:text-brand-600 font-semibold">Say Hello</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-brand-50 to-stone-50 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-semibold tracking-wide uppercase mb-6">
+                <i class="fa-solid fa-seedling"></i> Established 2006
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-stone-900 tracking-tight mb-6">
+                Welcome to Our <span class="text-brand-600">Family Story</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-stone-600 mb-10 leading-relaxed">
+                Adventures in homeschooling, woodworking, homesteading, creative projects, and everyday life in rural Kentucky.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#crew" class="px-8 py-4 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-600/20">
+                    Meet the Crew (10 Strong)
+                </a>
+                <a href="#updates" class="px-8 py-4 rounded-xl bg-white text-stone-700 font-medium hover:bg-stone-100 transition border border-stone-300">
+                    Read Journal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-stone-900 mb-6">Faith, Family & Hands-On Living</h2>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-4">
+                        We are a bustling family of ten living in Harrison County, Kentucky. Our days are filled with the wonderful chaos of homeschooling eight children, raising backyard chickens, tending to DIY homestead improvements, and building everything from wood crafts to digital projects.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed mb-6">
+                        Whether it’s woodworking in the workshop, fixing up vehicles, capturing memories through photography, or exploring the great outdoors, there's never a dull moment under our roof.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-stone-200">
+                        <div>
+                            <span class="block text-3xl font-extrabold text-brand-600">10</span>
+                            <span class="text-sm text-stone-500 font-medium">Family Members</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-extrabold text-brand-600">KY</span>
+                            <span class="text-sm text-stone-500 font-medium">Homestead Base</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-100 relative">
+                    <h3 class="text-xl font-bold text-stone-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-compass text-brand-600"></i> What Fills Our Days
+                    </h3>
+                    <ul class="space-y-3 text-stone-700">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"><span>Homeschooling & Family Learning</span></i></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"><span>Woodworking & Laser Crafting</span></i></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"><span>Photography & Audio Production</span></i></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"><span>Raising Backyard Chickens</span></i></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"><span>Outdoor Exploring & Kayaking</span></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Crew (10 People) -->
+    <section id="crew" class="py-20 bg-stone-100 border-t border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">The Whole Team</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Meet the Crew</h2>
+            <p class="text-stone-600 mt-3 max-w-xl mx-auto">All ten of us making life an adventure together every single day.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Member 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">DS</div>
+                    <h3 class="font-bold text-lg text-stone-900">Darwin</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Dad / Maker</p>
+                    <p class="text-stone-500 text-sm">Woodworker, photographer, digital consultant, and tech tinkerer.</p>
+                </div>
+                <!-- Member 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">NS</div>
+                    <h3 class="font-bold text-lg text-stone-900">Nancy</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Mom / Anchor</p>
+                    <p class="text-stone-500 text-sm">The heart of the home, guiding education and family life.</p>
+                </div>
+                <!-- Member 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Sayo Kids</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Brothers & Sisters</p>
+                    <p class="text-stone-500 text-sm">Four sons and four daughters bringing boundless energy and creativity.</p>
+                </div>
+                <!-- Member 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Sibling #2</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Homeschooler</p>
+                    <p class="text-stone-500 text-sm">Always busy with projects, reading, and outdoor games.</p>
+                </div>
+                <!-- Member 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Hazel</div>
+                    <h3 class="font-bold text-lg text-stone-900">Hazel</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">3rd Child</p>
+                    <p class="text-stone-500 text-sm">Creative spirit with a love for crafts and helping around the house.</p>
+                </div>
+                <!-- Member 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Sibling #4</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Explorer</p>
+                    <p class="text-stone-500 text-sm">Loves checking on the chickens and outdoor adventures.</p>
+                </div>
+                <!-- Member 7 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Sibling #5</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Builder</p>
+                    <p class="text-stone-500 text-sm">Enjoys hands-on building and helping in the workshop.</p>
+                </div>
+                <!-- Member 8 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Sibling #6</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Reader</p>
+                    <p class="text-stone-500 text-sm">Avid listener of audiobooks and imaginative storyteller.</p>
+                </div>
+                <!-- Member 9 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Maggie</div>
+                    <h3 class="font-bold text-lg text-stone-900">Maggie</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">7th Child</p>
+                    <p class="text-stone-500 text-sm">Full of curiosity and joy around our Kentucky homestead.</p>
+                </div>
+                <!-- Member 10 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
+                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
+                    <h3 class="font-bold text-lg text-stone-900">Youngest</h3>
+                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Little One</p>
+                    <p class="text-stone-500 text-sm">The baby of the family keeping everyone smiling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Homestead Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">Hands-On Creations</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Projects & Homestead</h2>
+                <p class="text-stone-600 mt-3 max-w-xl mx-auto">From coops to podcasts, here is what we are currently building.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Chicken Coop & Homestead</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Designing and building our raised chicken coop and run, keeping our flock happy, and managing property projects across Kentucky.
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Workshop & Laser Crafts</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Creating custom wooden markers, stencils, and personalized gifts using our laser engraver and woodworking tools.
+                    </p>
+                </div>
+
+                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-podcast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2">Decoded by Dad</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Our latest creative podcast venture discussing family life, fatherhood, tech tinkering, and everyday problem-solving.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Journal Updates -->
+    <section id="updates" class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">From the Journal</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Latest Family Updates</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <article class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">September 2026</span>
+                    <h3 class="text-xl font-bold text-stone-900 mt-1 mb-3">Kicking Off a New Homeschool Season</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                        Books are opened, schedules are adjusted, and all ten of us are settling into our new fall routine in rural Kentucky.
+                    </p>
+                    <a href="#" class="text-brand-600 font-semibold text-sm hover:underline flex items-center gap-1">Read more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </article>
+
+                <article class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">August 2026</span>
+                    <h3 class="text-xl font-bold text-stone-900 mt-1 mb-3">Launching "Decoded by Dad"</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                        Excited to officially register our new podcast domain and map out the first season of dad chats and project breakdowns.
+                    </p>
+                    <a href="#" class="text-brand-600 font-semibold text-sm hover:underline flex items-center gap-1">Read more <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Say Hello -->
+    <section id="contact" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-stone-900 mb-4">Say Hello to the Sayos</h2>
+            <p class="text-stone-600 mb-8">Want to connect, collaborate, or just drop a friendly note? We'd love to hear from you.</p>
+            <a href="mailto:hello@sayofamily.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-600/20">
+                <i class="fa-solid fa-envelope"></i> hello@sayofamily.com
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <span class="text-white font-bold text-lg">sayofamily<span class="text-brand-500">.com</span></span>
+                <p class="text-sm text-stone-500 mt-1">Established 2006 • Harrison County, Kentucky</p>
+            </div>
+            <div class="flex gap-6 text-xl">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-podcast"></i></a>
+            </div>
+            <p class="text-xs text-stone-600">&copy; 2006–2026 Sayo Family. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
