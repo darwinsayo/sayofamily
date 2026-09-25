@@ -3,321 +3,689 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayo Family | Home & Adventures</title>
+    <title>Sayo Family | Our Life, Adventures & Memories Est. 2006</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            50: '#fdf8f6',
-                            100: '#fbe8e3',
-                            500: '#dd6b20',
-                            600: '#c05621',
-                            700: '#9c4221',
-                            800: '#7b341e',
-                            900: '#652b19',
+                        warm: {
+                            50: '#fcfaf7',
+                            100: '#f5efe6',
+                            200: '#e8dcce',
+                            600: '#b8977a',
+                            700: '#9c795b',
+                            800: '#7a5e45',
+                            900: '#5c4633',
                         }
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfaf7;
+            color: #2c241d;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+<body class="bg-warm-50 text-warm-900 antialiased selection:bg-warm-200 selection:text-warm-900">
 
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold tracking-tight text-stone-900 flex items-center gap-2">
-                <i class="fa-solid fa-house-chimney text-brand-600"></i> sayofamily<span class="text-brand-600">.com</span>
-            </a>
-            <nav class="hidden md:flex items-center gap-8 text-stone-600 font-medium">
-                <a href="#about" class="hover:text-brand-600 transition">About Us</a>
-                <a href="#crew" class="hover:text-brand-600 transition">Meet the Crew</a>
-                <a href="#projects" class="hover:text-brand-600 transition">Projects & Homestead</a>
-                <a href="#updates" class="hover:text-brand-600 transition">Latest Journal</a>
-                <a href="#contact" class="px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition shadow-sm">Say Hello</a>
-            </nav>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-stone-700 text-xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+    <!-- Navigation Bar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-warm-50/80 backdrop-blur-md border-b border-warm-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-warm-800 text-white flex items-center justify-center font-heading font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                        S
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-xl tracking-tight text-warm-900">sayofamily<span class="text-warm-700">.com</span></span>
+                        <span class="block text-xs text-warm-600 font-medium tracking-wide">EST. 2006</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-warm-800">
+                    <a href="#home" class="hover:text-warm-600 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-warm-600 transition-colors">The Crew</a>
+                    <a href="#stories" class="hover:text-warm-600 transition-colors">Journal</a>
+                    <a href="#gallery" class="hover:text-warm-600 transition-colors">Moments</a>
+                    <a href="#contact" class="hover:text-warm-600 transition-colors">Say Hello</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#newsletter" class="bg-warm-800 hover:bg-warm-900 text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-sm transition-all hover:shadow">
+                        Join Our Circle
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-warm-900 focus:outline-none p-2 rounded-lg hover:bg-warm-200/50 transition-colors" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
         </div>
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-4 space-y-3">
-            <a href="#about" class="block text-stone-600 hover:text-brand-600">About Us</a>
-            <a href="#crew" class="block text-stone-600 hover:text-brand-600">Meet the Crew</a>
-            <a href="#projects" class="block text-stone-600 hover:text-brand-600">Projects & Homestead</a>
-            <a href="#updates" class="block text-stone-600 hover:text-brand-600">Latest Journal</a>
-            <a href="#contact" class="block text-stone-600 hover:text-brand-600 font-semibold">Say Hello</a>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-warm-50 border-b border-warm-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="block px-3 py-2 rounded-lg hover:bg-warm-200/60 font-medium text-warm-800">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-warm-200/60 font-medium text-warm-800">The Crew</a>
+            <a href="#stories" class="block px-3 py-2 rounded-lg hover:bg-warm-200/60 font-medium text-warm-800">Journal</a>
+            <a href="#gallery" class="block px-3 py-2 rounded-lg hover:bg-warm-200/60 font-medium text-warm-800">Moments</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-warm-200/60 font-medium text-warm-800">Say Hello</a>
+            <div class="pt-2">
+                <a href="#newsletter" class="block text-center bg-warm-800 text-white py-2.5 rounded-full font-medium shadow-sm">
+                    Join Our Circle
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-brand-50 to-stone-50 border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-semibold tracking-wide uppercase mb-6">
-                <i class="fa-solid fa-seedling"></i> Established 2006
-            </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-stone-900 tracking-tight mb-6">
-                Welcome to Our <span class="text-brand-600">Family Story</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-stone-600 mb-10 leading-relaxed">
-                Adventures in homeschooling, woodworking, homesteading, creative projects, and everyday life in rural Kentucky.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#crew" class="px-8 py-4 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-600/20">
-                    Meet the Crew (10 Strong)
-                </a>
-                <a href="#updates" class="px-8 py-4 rounded-xl bg-white text-stone-700 font-medium hover:bg-stone-100 transition border border-stone-300">
-                    Read Journal
-                </a>
-            </div>
-        </div>
-    </section>
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-[-10%] w-96 h-96 rounded-full bg-warm-200/40 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-[-5%] w-80 h-80 rounded-full bg-orange-100/40 blur-3xl pointer-events-none"></div>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold tracking-tight text-stone-900 mb-6">Faith, Family & Hands-On Living</h2>
-                    <p class="text-stone-600 text-lg leading-relaxed mb-4">
-                        We are a bustling family of ten living in Harrison County, Kentucky. Our days are filled with the wonderful chaos of homeschooling eight children, raising backyard chickens, tending to DIY homestead improvements, and building everything from wood crafts to digital projects.
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-warm-200/60 text-warm-800 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-heart text-rose-500"></i> Est. 2006 • The Sayo Family
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-warm-900 tracking-tight leading-tight">
+                        Two parents, eight kids, and <span class="text-warm-700 italic">endless memories.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-warm-800/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Welcome to our online home! From Darwin and Nancy to our wonderful 8 children—Spencer, Evarista, Hazel, Heiko, Grant, Isagani, Margaret, and Josephine—this is our story.
                     </p>
-                    <p class="text-stone-600 leading-relaxed mb-6">
-                        Whether it’s woodworking in the workshop, fixing up vehicles, capturing memories through photography, or exploring the great outdoors, there's never a dull moment under our roof.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-stone-200">
-                        <div>
-                            <span class="block text-3xl font-extrabold text-brand-600">10</span>
-                            <span class="text-sm text-stone-500 font-medium">Family Members</span>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#about" class="w-full sm:w-auto bg-warm-800 hover:bg-warm-900 text-white font-medium px-8 py-3.5 rounded-full shadow-md transition-all hover:shadow-lg flex items-center justify-center gap-2">
+                            <span>Meet All 10 of Us</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#stories" class="w-full sm:w-auto bg-warm-200/80 hover:bg-warm-200 text-warm-900 font-medium px-8 py-3.5 rounded-full transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open text-warm-700"></i>
+                            <span>Read Journal</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Stats badge -->
+                    <div class="pt-8 border-t border-warm-200/60 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <span class="block font-heading font-bold text-2xl text-warm-900">10</span>
+                            <span class="text-xs text-warm-600 font-medium uppercase tracking-wider">Total Crew</span>
                         </div>
-                        <div>
-                            <span class="block text-3xl font-extrabold text-brand-600">KY</span>
-                            <span class="text-sm text-stone-500 font-medium">Homestead Base</span>
+                        <div class="text-center lg:text-left">
+                            <span class="block font-heading font-bold text-2xl text-warm-900">2006</span>
+                            <span class="text-xs text-warm-600 font-medium uppercase tracking-wider">Established</span>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <span class="block font-heading font-bold text-2xl text-warm-900">500+</span>
+                            <span class="text-xs text-warm-600 font-medium uppercase tracking-wider">Adventures</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-brand-50 p-8 rounded-3xl border border-brand-100 relative">
-                    <h3 class="text-xl font-bold text-stone-900 mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-compass text-brand-600"></i> What Fills Our Days
-                    </h3>
-                    <ul class="space-y-3 text-stone-700">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"></i><span>Homeschooling & Family Learning</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"></i><span>Woodworking & Laser Crafting</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"></i><span>Photography & Audio Production</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"></i><span>Raising Backyard Chickens</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-600"></i><span>Outdoor Exploring & Kayaking</span></li>
-                    </ul>
+
+                <!-- Hero Right Image Collage -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-warm-200">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="Sayo Family Adventure" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/600x750/e8dcce/7a5e45?text=Sayo+Family'">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-warm-200/80 flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 text-xl font-bold">
+                                👨‍👩‍👧‍👦
+                            </div>
+                            <div>
+                                <span class="block font-heading font-bold text-warm-900 text-sm">Darwin & Nancy</span>
+                                <span class="text-xs text-warm-600">Proud Parents of 8</span>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-warm-800 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg transform rotate-6">
+                            EST. 2006
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Crew Section (Parents + 8 Siblings in exact order) -->
+    <section id="about" class="py-20 bg-warm-100/60 border-y border-warm-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-warm-700 font-semibold text-xs tracking-widest uppercase bg-warm-200/80 px-3 py-1 rounded-full">The Sayo Crew</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-warm-900">Meet All 10 Members of Our Family</h2>
+                <p class="text-warm-800/80 text-base sm:text-lg">
+                    Formed in 2006 with Darwin and Nancy, followed by our amazing eight children listed in order!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- 1. Darwin (Dad) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop" 
+                             alt="Darwin Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Darwin'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Darwin Sayo</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">Dad & Co-Founder</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Guiding our large crew with patience, BBQ expertise, and steady wisdom since 2006.
+                    </p>
+                </div>
+
+                <!-- 2. Nancy (Mom) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" 
+                             alt="Nancy Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Nancy'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Nancy Sayo</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">Mom & Heart</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        The heartbeat of our household, managing schedules, endless meals, and joyful milestones.
+                    </p>
+                </div>
+
+                <!-- 3. Spencer (1st Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop" 
+                             alt="Spencer Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Spencer'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Spencer</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">1st Child • Eldest</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Setting the standard for the sibling lineup with leadership, tech savvy, and reliable support.
+                    </p>
+                </div>
+
+                <!-- 4. Evarista (Eva) (2nd Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" 
+                             alt="Evarista Eva Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Evarista'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Evarista (Eva)</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">2nd Child • Creative</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Passionate about arts, journaling, and keeping everyone organized with artistic flair.
+                    </p>
+                </div>
+
+                <!-- 5. Hazel (3rd Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" 
+                             alt="Hazel Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Hazel'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Hazel</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">3rd Child • Bookworm</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        An avid reader and music enthusiast who brings calm and thoughtful perspective to the family.
+                    </p>
+                </div>
+
+                <!-- 6. Heiko (4th Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400&auto=format&fit=crop" 
+                             alt="Heiko Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Heiko'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Heiko</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">4th Child • Builder</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Always constructing things, whether LEGO sets, backyard forts, or science experiments.
+                    </p>
+                </div>
+
+                <!-- 7. Grant (5th Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400&auto=format&fit=crop" 
+                             alt="Grant Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Grant'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Grant</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">5th Child • Athlete</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Energetic and sporty, always ready for outdoor games, soccer drills, and spontaneous races.
+                    </p>
+                </div>
+
+                <!-- 8. Isagani (6th Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=400&auto=format&fit=crop" 
+                             alt="Isagani Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Isagani'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Isagani</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">6th Child • Explorer</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Curious about nature, hiking trails, and discovering cool rocks and insects in the backyard.
+                    </p>
+                </div>
+
+                <!-- 9. Margaret (Maggie) (7th Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop" 
+                             alt="Margaret Maggie Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Margaret'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Margaret (Maggie)</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">7th Child • Sunshine</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        Filling the house with cheerful songs, cheerful drawings, and endless laughter.
+                    </p>
+                </div>
+
+                <!-- 10. Josephine (8th Child) -->
+                <div class="bg-warm-50 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-warm-200/60 group">
+                    <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden border-4 border-warm-200/80 shadow-inner">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=400&auto=format&fit=crop" 
+                             alt="Josephine Sayo" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e8dcce/7a5e45?text=Josephine'">
+                    </div>
+                    <h3 class="font-heading font-bold text-lg text-warm-900">Josephine</h3>
+                    <span class="inline-block text-[11px] font-semibold text-warm-700 uppercase tracking-wider mb-2">8th Child • Youngest</span>
+                    <p class="text-xs text-warm-800/80 leading-relaxed">
+                        The youngest sparkplug of the household, telling delightful imaginative stories to everyone.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet the Crew (10 People) -->
-    <section id="crew" class="py-20 bg-stone-100 border-t border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-            <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">The Whole Team</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Meet the Crew</h2>
-            <p class="text-stone-600 mt-3 max-w-xl mx-auto">All ten of us making life an adventure together every single day.</p>
-        </div>
-
+    <!-- Recent Journal / Posts Section -->
+    <section id="stories" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- Member 1 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">DS</div>
-                    <h3 class="font-bold text-lg text-stone-900">Darwin</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Dad / Maker</p>
-                    <p class="text-stone-500 text-sm">Woodworker, photographer, digital consultant, and tech tinkerer.</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-warm-700 font-semibold text-xs tracking-widest uppercase bg-warm-200/80 px-3 py-1 rounded-full">Recent Journal</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-warm-900 mt-3">Latest Adventures & Notes</h2>
                 </div>
-                <!-- Member 2 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">NS</div>
-                    <h3 class="font-bold text-lg text-stone-900">Nancy</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Mom / Anchor</p>
-                    <p class="text-stone-500 text-sm">The heart of the home, guiding education and family life.</p>
-                </div>
-                <!-- Member 3 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Sayo Kids</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Brothers & Sisters</p>
-                    <p class="text-stone-500 text-sm">Four sons and four daughters bringing boundless energy and creativity.</p>
-                </div>
-                <!-- Member 4 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Sibling #2</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Homeschooler</p>
-                    <p class="text-stone-500 text-sm">Always busy with projects, reading, and outdoor games.</p>
-                </div>
-                <!-- Member 5 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Hazel</div>
-                    <h3 class="font-bold text-lg text-stone-900">Hazel</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">3rd Child</p>
-                    <p class="text-stone-500 text-sm">Creative spirit with a love for crafts and helping around the house.</p>
-                </div>
-                <!-- Member 6 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Sibling #4</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Explorer</p>
-                    <p class="text-stone-500 text-sm">Loves checking on the chickens and outdoor adventures.</p>
-                </div>
-                <!-- Member 7 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Sibling #5</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Builder</p>
-                    <p class="text-stone-500 text-sm">Enjoys hands-on building and helping in the workshop.</p>
-                </div>
-                <!-- Member 8 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Sibling #6</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Reader</p>
-                    <p class="text-stone-500 text-sm">Avid listener of audiobooks and imaginative storyteller.</p>
-                </div>
-                <!-- Member 9 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Maggie</div>
-                    <h3 class="font-bold text-lg text-stone-900">Maggie</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">7th Child</p>
-                    <p class="text-stone-500 text-sm">Full of curiosity and joy around our Kentucky homestead.</p>
-                </div>
-                <!-- Member 10 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 text-center hover:shadow-md transition">
-                    <div class="w-20 h-20 bg-stone-100 text-stone-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">Kid</div>
-                    <h3 class="font-bold text-lg text-stone-900">Youngest</h3>
-                    <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mb-2">Little One</p>
-                    <p class="text-stone-500 text-sm">The baby of the family keeping everyone smiling.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects & Homestead Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">Hands-On Creations</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Projects & Homestead</h2>
-                <p class="text-stone-600 mt-3 max-w-xl mx-auto">From coops to podcasts, here is what we are currently building.</p>
+                <a href="#newsletter" class="inline-flex items-center gap-2 text-warm-800 font-semibold hover:text-warm-600 transition-colors">
+                    <span>Browse All Stories</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
-                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-feather"></i>
+                <!-- Post 1 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-warm-200/60 flex flex-col group">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-warm-200">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" 
+                             alt="Coastal road trip" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e8dcce/7a5e45?text=Coastal+Trip'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-warm-900 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                            Travel
+                        </span>
                     </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">Chicken Coop & Homestead</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        Designing and building our raised chicken coop and run, keeping our flock happy, and managing property projects across Kentucky.
-                    </p>
-                </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-warm-600 mb-2 font-medium">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Sept 22, 2026</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 4 min read</span>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-warm-900 group-hover:text-warm-700 transition-colors">
+                                Packing a Van for 10: Our Epic Coastal Road Trip
+                            </h3>
+                            <p class="text-sm text-warm-800/80 mt-2 line-clamp-3">
+                                How we managed seating charts, endless snack bags, and discovering the most breathtaking tide pools along the coastline.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-warm-200/60 flex items-center justify-between">
+                            <span class="text-xs font-medium text-warm-700">By Nancy & Darwin</span>
+                            <button onclick="openPostModal('Packing a Van for 10: Our Epic Coastal Road Trip', 'How we managed seating charts, endless snack bags, and discovering the most breathtaking tide pools along the coastline. Traveling with a family of 10 takes military-grade logistics, but seeing the younger ones spot their first starfish makes every packing minute worth it.')" class="text-sm font-semibold text-warm-900 hover:text-warm-700 flex items-center gap-1">
+                                Read Story <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
-                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-hammer"></i>
+                <!-- Post 2 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-warm-200/60 flex flex-col group">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-warm-200">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" 
+                             alt="Kitchen baking cookies" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e8dcce/7a5e45?text=Kitchen+Adventures'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-warm-900 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                            Kitchen
+                        </span>
                     </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">Workshop & Laser Crafts</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        Creating custom wooden markers, stencils, and personalized gifts using our laser engraver and woodworking tools.
-                    </p>
-                </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-warm-600 mb-2 font-medium">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Sept 14, 2026</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 3 min read</span>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-warm-900 group-hover:text-warm-700 transition-colors">
+                                Sunday Morning Pancakes for Ten: Flour & Laughter
+                            </h3>
+                            <p class="text-sm text-warm-800/80 mt-2 line-clamp-3">
+                                Why cooking breakfast with eight kids is equal parts culinary experiment and slapstick comedy routine.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-warm-200/60 flex items-center justify-between">
+                            <span class="text-xs font-medium text-warm-700">By Spencer & Evarista</span>
+                            <button onclick="openPostModal('Sunday Morning Pancakes for Ten: Flour & Laughter', 'Why cooking breakfast with eight kids is equal parts culinary experiment and slapstick comedy routine. Spencer manned the griddle while the younger ones helped measure flour, resulting in a cloud of white dust and the fluffiest pancakes ever.')" class="text-sm font-semibold text-warm-900 hover:text-warm-700 flex items-center gap-1">
+                                Read Story <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="bg-stone-50 rounded-2xl p-6 border border-stone-200">
-                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-podcast"></i>
+                <!-- Post 3 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-warm-200/60 flex flex-col group">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-warm-200">
+                        <img src="https://images.unsplash.com/photo-1587574293340-e001dd1bb9ec?q=80&w=800&auto=format&fit=crop" 
+                             alt="Backyard garden" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/e8dcce/7a5e45?text=Backyard+Project'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-warm-900 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                            Home & Garden
+                        </span>
                     </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-2">Decoded by Dad</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        Our latest creative podcast venture discussing family life, fatherhood, tech tinkering, and everyday problem-solving.
-                    </p>
-                </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-warm-600 mb-2 font-medium">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> Aug 30, 2026</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> 5 min read</span>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-warm-900 group-hover:text-warm-700 transition-colors">
+                                Building Our Family Vegetable Patch From Scratch
+                            </h3>
+                            <p class="text-sm text-warm-800/80 mt-2 line-clamp-3">
+                                Tomatoes, strawberries, and teamwork. How Heiko and Grant turned an overgrown patch of grass into our family garden.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-warm-200/60 flex items-center justify-between">
+                            <span class="text-xs font-medium text-warm-700">By Heiko & Grant</span>
+                            <button onclick="openPostModal('Building Our Family Vegetable Patch From Scratch', 'Tomatoes, strawberries, and teamwork. How Heiko and Grant turned an overgrown patch of grass into our family garden. Everyone took turns watering the plants every evening after dinner.')" class="text-sm font-semibold text-warm-900 hover:text-warm-700 flex items-center gap-1">
+                                Read Story <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Latest Journal Updates -->
-    <section id="updates" class="py-20 bg-stone-50 border-t border-stone-200">
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 bg-warm-100/60 border-y border-warm-200/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-brand-600 font-semibold tracking-wider uppercase text-sm">From the Journal</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 mt-2">Latest Family Updates</h2>
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-warm-700 font-semibold text-xs tracking-widest uppercase bg-warm-200/80 px-3 py-1 rounded-full">Moments Captured</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-warm-900">Snapshots from Our Scrapbook</h2>
+                <p class="text-warm-800/80 text-base">
+                    A collection of candid smiles, muddy boots, rainy day puzzles, and sunlit afternoons since 2006.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <article class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
-                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">September 2026</span>
-                    <h3 class="text-xl font-bold text-stone-900 mt-1 mb-3">Kicking Off a New Homeschool Season</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                        Books are opened, schedules are adjusted, and all ten of us are settling into our new fall routine in rural Kentucky.
-                    </p>
-                    <a href="#" class="text-brand-600 font-semibold text-sm hover:underline flex items-center gap-1">Read more <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                </article>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-warm-200 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=600&auto=format&fit=crop" 
+                         alt="Camping trip" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/500x500/e8dcce/7a5e45?text=Camping'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-medium tracking-wide">⛺ Mountain Camping Trip</span>
+                    </div>
+                </div>
 
-                <article class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
-                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">August 2026</span>
-                    <h3 class="text-xl font-bold text-stone-900 mt-1 mb-3">Launching "Decoded by Dad"</h3>
-                    <p class="text-stone-600 text-sm leading-relaxed mb-4">
-                        Excited to officially register our new podcast domain and map out the first season of dad chats and project breakdowns.
-                    </p>
-                    <a href="#" class="text-brand-600 font-semibold text-sm hover:underline flex items-center gap-1">Read more <i class="fa-solid fa-arrow-right text-xs"></i></a>
-                </article>
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-warm-200 shadow-sm md:translate-y-4">
+                    <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?q=80&w=600&auto=format&fit=crop" 
+                         alt="Baking together" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/500x500/e8dcce/7a5e45?text=Baking'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-medium tracking-wide">🍪 Saturday Baking</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-warm-200 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600&auto=format&fit=crop" 
+                         alt="Park picnic" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/500x500/e8dcce/7a5e45?text=Picnic'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-medium tracking-wide">🌳 Autumn Picnic</span>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-warm-200 shadow-sm md:translate-y-4">
+                    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=600&auto=format&fit=crop" 
+                         alt="Game night" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/500x500/e8dcce/7a5e45?text=Games'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white text-xs font-medium tracking-wide">🎲 Family Game Night</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / Say Hello -->
-    <section id="contact" class="py-20 bg-white border-t border-stone-200">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-extrabold text-stone-900 mb-4">Say Hello to the Sayos</h2>
-            <p class="text-stone-600 mb-8">Want to connect, collaborate, or just drop a friendly note? We'd love to hear from you.</p>
-            <a href="mailto:hello@sayofamily.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 transition shadow-lg shadow-brand-600/20">
-                <i class="fa-solid fa-envelope"></i> hello@sayofamily.com
-            </a>
-        </div>
-    </section>
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-warm-900 text-warm-100 pt-20 pb-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-warm-800/20 blur-3xl pointer-events-none"></div>
 
-    <!-- Footer -->
-    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div>
-                <span class="text-white font-bold text-lg">sayofamily<span class="text-brand-500">.com</span></span>
-                <p class="text-sm text-stone-500 mt-1">Established 2006 • Harrison County, Kentucky</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter Banner Box -->
+            <div id="newsletter" class="bg-warm-800/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-warm-700 shadow-xl mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-3">
+                        <span class="text-orange-300 text-xs font-semibold uppercase tracking-wider">Stay Connected</span>
+                        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Join the Sayo Family Circle</h3>
+                        <p class="text-warm-200 text-sm sm:text-base">
+                            Get our monthly dispatch straight to your inbox with recipe favorites, family reflections, and updates from all 10 of us.
+                        </p>
+                    </div>
+                    <div>
+                        <form id="newsletter-form" onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" id="newsletter-email" required placeholder="Enter your email address" 
+                                   class="bg-warm-900/80 border border-warm-700 text-white placeholder-warm-400 px-5 py-3.5 rounded-full focus:outline-none focus:ring-2 focus:ring-warm-600 flex-1 text-sm">
+                            <button type="submit" class="bg-white hover:bg-warm-100 text-warm-900 font-semibold px-6 py-3.5 rounded-full text-sm transition-all shadow-sm">
+                                Subscribe
+                            </button>
+                        </form>
+                        <div id="newsletter-success" class="hidden mt-3 text-emerald-300 text-xs font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Welcome to our circle! You are subscribed.
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex gap-6 text-xl">
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-podcast"></i></a>
+
+            <!-- Main Footer Links -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-warm-800">
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white text-warm-900 flex items-center justify-center font-heading font-bold text-xl">
+                            S
+                        </div>
+                        <span class="font-heading font-bold text-2xl text-white tracking-tight">sayofamily<span class="text-warm-400">.com</span></span>
+                    </div>
+                    <p class="text-warm-300 text-sm leading-relaxed max-w-sm">
+                        Documenting our journey through parenthood, shared meals, and everyday adventures since 2006. Built with love and plenty of coffee.
+                    </p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-warm-800 hover:bg-warm-700 flex items-center justify-center text-warm-200 hover:text-white transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-warm-800 hover:bg-warm-700 flex items-center justify-center text-warm-200 hover:text-white transition-colors" aria-label="Pinterest">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-warm-800 hover:bg-warm-700 flex items-center justify-center text-warm-200 hover:text-white transition-colors" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-warm-300">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">The Crew</a></li>
+                        <li><a href="#stories" class="hover:text-white transition-colors">Journal / Blog</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors">Moments Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">Say Hello Directly</h4>
+                    <p class="text-sm text-warm-300">
+                        Have a question, collaboration idea, or just want to say hi? Send us a note at:
+                    </p>
+                    <a href="mailto:hello@sayofamily.com" class="inline-flex items-center gap-2 text-white font-semibold bg-warm-800 hover:bg-warm-700 px-4 py-2.5 rounded-xl transition-colors text-sm">
+                        <i class="fa-regular fa-envelope text-orange-300"></i> hello@sayofamily.com
+                    </a>
+                </div>
             </div>
-            <p class="text-xs text-stone-600">&copy; 2006–2026 Sayo Family. All rights reserved.</p>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-warm-400 gap-4">
+                <p>&copy; 2006-2026 sayofamily.com. All rights reserved.</p>
+                <p class="flex items-center gap-1">
+                    Made with <i class="fa-solid fa-heart text-rose-400 mx-1"></i> by Darwin, Nancy & all 8 children
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+    <!-- Post Reader Modal -->
+    <div id="post-modal" class="fixed inset-0 z-50 hidden bg-warm-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-warm-50 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-warm-200 transform transition-all">
+            <button onclick="closePostModal()" class="absolute top-4 right-4 text-warm-600 hover:text-warm-900 p-2 rounded-full hover:bg-warm-200/50 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <span id="modal-category" class="inline-block bg-warm-200 text-warm-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Journal Entry</span>
+            <h3 id="modal-title" class="font-heading font-bold text-2xl text-warm-900 mb-4">Post Title</h3>
+            <p id="modal-body" class="text-warm-800/80 text-sm sm:text-base leading-relaxed mb-6">
+                Post full content goes here...
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-warm-200">
+                <span class="text-xs text-warm-600 font-medium">Sayo Family Journal</span>
+                <button onclick="closePostModal()" class="bg-warm-800 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-warm-900 transition-colors">
+                    Close Story
+                </button>
+            </div>
+        </div>
+    </div>
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+    <!-- JavaScript for Mobile Menu & Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Close menu on link click
-        menu.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm', 'bg-warm-50/95');
+            } else {
+                navbar.classList.remove('shadow-sm', 'bg-warm-50/95');
+            }
+        });
+
+        // Newsletter Subscription Handler
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('newsletter-email');
+            const successMsg = document.getElementById('newsletter-success');
+            
+            if (emailInput.value.trim() !== '') {
+                successMsg.classList.remove('hidden');
+                emailInput.value = '';
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // Post Reader Modal Functions
+        function openPostModal(title, content) {
+            const modal = document.getElementById('post-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            
+            modalTitle.textContent = title;
+            modalBody.textContent = content;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePostModal() {
+            const modal = document.getElementById('post-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('post-modal');
+            if (e.target === modal) {
+                closePostModal();
+            }
         });
     </script>
 </body>
